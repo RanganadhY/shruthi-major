@@ -1,0 +1,4 @@
+Meta mask private key = 7de1f763173c5ced5cc25f42d0479c74ce4027d8c5ea9e814a706f969dafbbc8
+
+deployed address = 0x2B0f0eAA0135DD908cA2027809cdBA0C2336B87b
+
