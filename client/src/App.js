@@ -28,12 +28,14 @@ function App() {
       console.log(accounts[0])
       const contract = await new window.web3.eth.Contract(JSON.parse(CONTRACT_ABI),CONTRACT_ADDRESS)
       console.log(contract)
-      const message = await contract.methods.helloworld().call()
-      console.log(message)
-      // const totalmessage = await contract.methods.getTotalDonation().call({from :accounts[0]})
-      const totalmessage = await contract.methods.donate(20).call({from :accounts[0]})
-      console.log(totalmessage)
+      // const message = await contract.methods.helloworld().call()
+      // console.log(message)
       
+      // const totalmessage = await contract.methods.donate(20).send({from :accounts[0]})
+      // console.log(totalmessage)
+      // const message = await contract.methods.getTotalDonation().call({from :accounts[0]})
+
+      // console.log(message)
     }
 
   },[])
@@ -42,7 +44,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/donate" element={<Donation/>}/>
-        <Route path="/veiw-tx" element={<TranX/>}/>
+        <Route path="/tx" element={<TranX/>}/>
       </Routes>
     </div>
   );

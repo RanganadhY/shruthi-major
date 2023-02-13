@@ -1,0 +1,23 @@
+.detail-wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(95,95,95,0.2);
+
+}
+.details-container{
+    width: 50%;
+}
+.details-container div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.details-container div label{
+    width: 30%;
+
+}
