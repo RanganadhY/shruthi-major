@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  letter-spacing: 0.06rem;
 }
 
 .App-logo {
@@ -20,7 +21,7 @@
 
 
 
-button{
+/* button{
   align-items: center;
   background-clip: padding-box;
   background-color: #fa6400;
@@ -57,7 +58,7 @@ button:active {
 .button:focus {
   background-color: #fb8332;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
+} */
 
 .button:hover {
   transform: translateY(-1px);

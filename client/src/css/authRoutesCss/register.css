@@ -1,0 +1,65 @@
+.register-main-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #eff3f6;
+}
+.register-side-pic{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-side-pic div{
+    height: 100%;
+}
+.register-side-pic div img{
+    width: 100%;
+    height: 100%;
+}
+.register-main-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42%;
+    height: 95%;
+    background-color: white;
+}
+
+.register-main-container form div{
+    width: 90%;
+    display: flex;
+    padding: 0.2rem 0;
+    justify-content: center;
+    /* margin: 0.5rem 0; */
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+.register-main-container form div label{
+    flex-basis: 50%;
+    text-align: left;
+    background-color: rgba(96,96,96,0.01);
+}
+.register-main-container form button{
+    margin: 0.5rem 0 ;
+}
+.register-register-btn{
+    border: none;
+    background-color: #fa6400;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius:0.35rem;
+    cursor: pointer;
+}
+.register-login-btn{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+}

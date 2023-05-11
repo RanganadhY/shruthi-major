@@ -6,17 +6,22 @@ import {Routes,Route} from "react-router-dom"
 
 
 import Home from "./routes/home"
-import Donation from "./routes/donation"
-import TranX from "./routes/veiwTx";
+import Donation from "./routes/donor/donationPage"
+import DonationHistory from "./routes/donor/donationHistory";
+import Login from "./routes/auth/login";
+import Register from "./routes/auth/register";
 
+import AdminHomePage from "./routes/admin/adminHomePage";
+import AdminVeiwRequests from "./routes/admin/adminVeiwRequests";
 
-const CONTRACT_ADDRESS = "0x2B0f0eAA0135DD908cA2027809cdBA0C2336B87b"
+import RecepientHomePage from "./routes/recepient/recepientHomePage";
+import RequestDonation from "./routes/recepient/requestDonation";
+import RecepientViewRequests from "./routes/recepient/recepientViewRequests";
+
+const CONTRACT_ADDRESS = "0xFfa28880647FDAA98f1e6e92Cfd0671D316122f6"
 const CONTRACT_ABI = '[{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"donate","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getTotalDonation","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"getUserDonations","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"helloworld","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalDonation","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"userDonations","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]'
 
 function App() {
-
-
-  const [myAccountAddress, setmyAccountAddress] = useState("")
 
   useEffect(()=>{
     getconst()
@@ -42,9 +47,24 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+
+        <Route path="/donor-home" element={<Donation/>}/>
+
+        <Route path="/admin-home" element={<AdminHomePage/>}/>
+        <Route path="/admin/view-donation-requests" element={<AdminVeiwRequests/>}/>
+
+        <Route path="/recepient-home" element={<RecepientHomePage/>}/>
+        <Route path="/:userName/request-donation" element={<RequestDonation/>}/>
+        <Route path="/recepient/view-requests/:userName" element={<RecepientViewRequests/>}/>
+
+
+
+
+        <Route path="/home" element={<Home/>}/>
         <Route path="/donate" element={<Donation/>}/>
-        <Route path="/tx" element={<TranX/>}/>
+        <Route path="/donations-history/:userName" element={<DonationHistory/>}/>
       </Routes>
     </div>
   );

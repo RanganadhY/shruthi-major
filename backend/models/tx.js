@@ -7,6 +7,15 @@ const txSchema = new mongoose.Schema({
     },
     amount:{
         type:Number
+    },
+    dateOfTx:{
+        type:Date
+    },
+    userName:{
+        type:String
+    },
+    gasFee:{
+        type:Number
     }
 })
 

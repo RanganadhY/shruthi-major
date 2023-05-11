@@ -1,17 +1,46 @@
 const express = require("express");
 const cors = require("cors");
 
+const authRoutes = require("./routes/authRoutes");
+const txRoutes = require("./routes/txRoutes");
+const recepientRoutes = require("./routes/recepientRoutes");
+const adminRoutes = require("./routes/adminRoutes")
+// const idVerificationRoutes = require("./routes/idverification")
+
 const app = express();
 const port =3001;
+
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+
+
+
+const panNoModel = require("./models/panCardDetails");
+app.post("/addPanNo",async(req,res)=>{
+    const {panNo,userName} = req.body;
+    try{
+        const response = await panNoModel.create({
+            panNo,
+            userName
+        })
+        return res.status(200).json({"message":"added sucessfully"})
+    }
+    catch(e){
+        console.log(e)
+    }
+})
+app.use("/auth",authRoutes);
+app.use("/api/tx/",txRoutes);
+app.use("/api/recepient/",recepientRoutes);
+app.use("/api/admin/",adminRoutes)
+
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://anudeep:anudeep@cluster0.haii6bd.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://ranganadhyadlapalli:135790@cluster0.xoait.mongodb.net/shruthimajor?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -20,35 +49,6 @@ const db = mongoose.connection;
 
 db.on("error",(error)=>console.log(error))
 db.once("open",()=>console.log("Connected to Database"));
-const txSchema = require("./models/tx");
-app.post("/store",async(req,res)=>{
-
-    const {amount, hash} = req.body;
-    const details = new txSchema({
-        amount,
-        hash
-    })
-    await details.save()
-    .then(()=>{
-        console.log("saved")
-        res.status(200).json({
-            "message":"done"
-        })
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-
-})
-app.get("/gettx",async(req,res)=>{
-    await txSchema.find()
-    .then((result)=>{
-        res.status(200).json({
-            'result':result
-        })
-    })
-})
-
 app.listen(port,()=>{
     console.log("server running on port " + port);
 });
