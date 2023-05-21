@@ -1,12 +1,11 @@
 import React ,{useState,useEffect}from 'react'
 import { useLocation,useNavigate } from 'react-router-dom';
-import "../../css/donation.css"
+import "../../css/donationpage.css"
 import Web3 from "web3";
 import axios from "../../axios/axios"
 import { adminWalletId } from '../../env/env';
 const CONTRACT_ADDRESS = "0xFfa28880647FDAA98f1e6e92Cfd0671D316122f6"
 const CONTRACT_ABI = '[{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"donate","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getTotalDonation","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"getUserDonations","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"helloworld","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalDonation","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"userDonations","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]'
-
 
 function Donation() {
 
@@ -110,14 +109,13 @@ function Donation() {
     }
 
     return (
-        <div>
-            <div>
+        <div className='donation-page-design'>
+            <div className='userName'>
                 {state.userDetails.userName}
             </div>
             <div className="detail-wrapper">
-
                 <div className="details-container">
-                    <div>
+                    <div className='label-input'>
                         <label htmlFor="">Account Balance(in Ether)</label>
                         <input 
                             type="text" 
@@ -125,20 +123,20 @@ function Donation() {
                             readOnly
                         />
                     </div>
-                    <div>
+                    <div className='label-input'>
                         <label htmlFor="">Donation Amount</label>
                         <input 
                             value={donationAmount}
                             onChange={(e)=>setdonationAmount(e.target.value.toString())}
                             type="text" />
                     </div>
-                    <div>
+                    <div className='donar_button'>
                         <button
                         onClick={handleTransfer}
                             >Make the Donation</button>
                     </div>
-                    <div>
-                        <button
+                    <div className='donar_button'>
+                        <button 
                         onClick={donationHistory}
                             >Donation History</button>
                     </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate,useLocation } from 'react-router-dom'
+import "../../css/recepientHomePage.css"
+import { useParams } from 'react-router-dom'
 
 function RecepientHomePage() {
     const navigate = useNavigate()
@@ -10,15 +12,23 @@ function RecepientHomePage() {
     const handleViewRequets = async()=>{
         navigate(`/recepient/view-requests/${state.userDetails.userName}`)
     }
+    const {userName} = useParams();
+
     return (
-        <>
-            <div className='recepient-HomePage-Wrapper'>
-                <button onClick={handleAskDonation}>Ask for Donation</button>
+        <div className='recepientHomePage-style'>
+            <div className='userName'>
+                {userName}
             </div>
-            <div>
-                <button onClick={handleViewRequets}>View Requests</button>
+            <div className='rec-details-container'>
+                <div>
+                    <button onClick={handleAskDonation}>Ask for Donation</button>
+                </div>
+                <div>
+                    <button onClick={handleViewRequets}>View Requests</button>
+                </div>
             </div>
-        </>
+
+        </div>
     )
 }
 

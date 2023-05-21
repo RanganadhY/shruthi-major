@@ -1,0 +1,31 @@
+.recepientHomePage-style{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e6c79c;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+}
+.recepientHomePage-style button{
+    background-color: darkblue;
+    width:15rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  darkblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+}
+
+.recepientHomePage-style .rec-details-container{
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}

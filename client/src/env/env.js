@@ -1,3 +1,3 @@
 export const adminWalletId=()=>{
-    return "0x0EDD3Bd92d962d6B9810D6C4B44a1a49642B406d";
+    return "0x5B7B47b3590D722E569e7695DBeE6cdA2fbAbdF8";
 } 

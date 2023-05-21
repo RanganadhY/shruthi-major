@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from "../../axios/axios";
 import Web3 from "web3";
+import "../../css/recepientDonation.css"
 
 function RequestDonation() {
 
@@ -39,31 +40,37 @@ function RequestDonation() {
     
     },[])
     return (
-        <>
-            <div className="rd-main-container">
-                <form action="">
-                    <div>
-                        <label htmlFor="">Reason For Donation</label>
-                        <textarea 
-                            name="" id="" cols="30" rows="2"
-                            value={requestReason}
-                            onChange={(e)=>setrequestReason(e.target.value)}
-                            ></textarea>
-                    </div>
-                    <div>
-                        <label htmlFor="">Amount Needed</label>
-                        <input 
-                            type="text"
-                            value={requestedAmount} 
-                            onChange={(e)=>setrequestedAmount(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <button onClick={handleRequestDonation}>Request Donation</button>
-                    </div>
-                </form>
+        <div className='request-donation-pgstyle'>
+            <div className='userName'>
+                {userName}
             </div>
-        </>
+            <div className="rd-main-container">
+                <div className='form-holder-css'>
+                    <form action="" >
+                        <div className='form-div-rec'>
+                            <label htmlFor="">Reason For Donation</label>
+                            <textarea 
+                                name="" id="" cols="30" rows="2"
+                                value={requestReason}
+                                onChange={(e)=>setrequestReason(e.target.value)}
+                                ></textarea>
+                        </div>
+                        <div className='form-div-rec'>
+                            <label htmlFor="">Amount Needed</label>
+                            <input 
+                                type="text"
+                                value={requestedAmount} 
+                                onChange={(e)=>setrequestedAmount(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <button onClick={handleRequestDonation}>Request Donation</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
     )
 }
 

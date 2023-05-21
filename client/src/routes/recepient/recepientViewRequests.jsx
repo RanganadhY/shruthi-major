@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "../../axios/axios"
+import "../../css/recepientViewRequests.css"
 
 function RecepientViewRequests() {
     const {userName} = useParams();
@@ -14,15 +15,14 @@ function RecepientViewRequests() {
         fetchRequests();
     },[])
     return (
-        <>
-            <div>
-                <p>User Name</p>
-                <p>{userName}</p>
+        <div className='recepientViewRequests'>
+            <div className='userName'>
+                {userName}
             </div>
             {viewRequests&&<div className='tx'>
-                <table width="100%">
+                <table >
                     <thead>
-                        <tr>
+                        <tr className='table-header'>
                             <th>Date of Request</th>
                             <th>Reason</th>
                             <th>Requested Amount</th>
@@ -46,7 +46,7 @@ function RecepientViewRequests() {
                 
             </div>
             }
-        </>
+        </div>
     )
 }
 

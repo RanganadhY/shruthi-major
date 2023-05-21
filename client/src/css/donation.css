@@ -1,23 +1,39 @@
-.detail-wrapper{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(95,95,95,0.2);
 
+/* .details-container .donar_button button{
+width: 15rem;
+height: 2rem;
+background-color:  #7b9dd4;
+color: rgb(10, 65, 77);
+font-size: 1rem;
+font-weight: 500;
+border-radius:0.5rem;
+border: none;
 }
-.details-container{
-    width: 50%;
-}
-.details-container div{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.5rem 0;
-}
-.details-container div label{
-    width: 30%;
 
+button:hover{
+    background-color:  #646464;
+}
+
+.details-container label{
+ color: rgb(36, 36, 79);
+ font-weight: 600;
+}
+
+.details-container input{
+    color: rgb(36, 36, 79);
+background-color:  rgb(105, 105, 144);
+   } */
+
+
+
+
+   /* recipent */
+
+
+
+.userName{
+    color: rgb(39, 58, 134);
+    font-size:2rem;
+    font-weight: 500;
+    padding-top: 1rem;
 }

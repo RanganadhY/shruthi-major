@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import { useLocation,useParams } from 'react-router-dom';
 import axios from "../../axios/axios"
-import "../../css/viewTx.css"
+import "../../css/donationhistory.css"
 
 function VeiwTx() {
     const [saveRes, setsaveRes] = useState();
@@ -16,19 +16,18 @@ function VeiwTx() {
         })
     }
     return (
-        <>
-            <div>
-                <p>User Name</p>
-                <p>{userName}</p>
+        <div className='donation-history'>
+            <div className='userName'>
+                {userName}
             </div>
-            <button
+            <button className='show-donation-btn'
                 onClick={handleShowDonations}
             >Show my donantion</button>
 
             {saveRes&&<div className='tx'>
                 <table width="100%">
                     <thead>
-                        <tr>
+                        <tr className='table-header'>
                             <th>Date of Tx</th>
                             <th>Amount</th>
                             <th>Gas Fee</th>
@@ -53,7 +52,7 @@ function VeiwTx() {
             </div>
             }
 
-        </>
+        </div>
     )
 }
 
