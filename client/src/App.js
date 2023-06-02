@@ -6,8 +6,13 @@ import {Routes,Route} from "react-router-dom"
 
 
 import Home from "./routes/home"
+
+import DonationHomePage from "./routes/donor/donationHomePage";
 import Donation from "./routes/donor/donationPage"
 import DonationHistory from "./routes/donor/donationHistory";
+import ViewDonationRequests from "./routes/donor/viewDonationRequests";
+import VotingPanel from "./routes/donor/votingPanel";
+
 import Login from "./routes/auth/login";
 import Register from "./routes/auth/register";
 
@@ -50,12 +55,12 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
 
-        <Route path="/donor-home" element={<Donation/>}/>
+        {/* <Route path="/donor-home" element={<Donation/>}/> */}
 
         <Route path="/admin-home" element={<AdminHomePage/>}/>
         <Route path="/admin/view-donation-requests" element={<AdminVeiwRequests/>}/>
 
-        <Route path="/recepient-home" element={<RecepientHomePage/>}/>
+        <Route path="/recepient-home/:userName" element={<RecepientHomePage/>}/>
         <Route path="/:userName/request-donation" element={<RequestDonation/>}/>
         <Route path="/recepient/view-requests/:userName" element={<RecepientViewRequests/>}/>
 
@@ -63,8 +68,12 @@ function App() {
 
 
         <Route path="/home" element={<Home/>}/>
-        <Route path="/donate" element={<Donation/>}/>
+
+        <Route path="/donor-home/:userName" element={<DonationHomePage/>}/>
+        <Route path="/:userName/view-donation-requests" element={<ViewDonationRequests/>}/>
+        <Route path="/donate/:userName/:requestNumber" element={<Donation/>}/>
         <Route path="/donations-history/:userName" element={<DonationHistory/>}/>
+        <Route path="/:userName/voting-panel/:requestNumber" element={<VotingPanel/>}/>
       </Routes>
     </div>
   );

@@ -12,7 +12,38 @@ const txSchema = new mongoose.Schema({
     },
     txAmount:{
         type:Number
+    },
+    requestNumber:{
+        type:Number
     }
+    
+})
+
+const donationRequestSchema = new mongoose.Schema({
+    requestNumber:{
+        type:Number
+    },
+    recepientMetamaskAddress:{
+        type:String
+    },
+    requestedAmount:{
+        type:String
+    },
+    requestReason:{
+        type:String
+    },
+    requestReasonIpfsHash:{
+        type:String
+    },
+    requestedDate:{
+        type:Date
+    },
+    requestStatus:{
+        type:String,
+    },
+    recepientUserName:{
+        type:String
+    },
 })
 const donorsSchema=new mongoose.Schema({
     userName:{
@@ -29,6 +60,7 @@ const donorsSchema=new mongoose.Schema({
         type:String
     },
     metamaskAddress:[String],
-    txsHistory:[txSchema]
+    txsHistory:[txSchema],
+    
 })
 module.exports=mongoose.model("donorsSchema",donorsSchema);

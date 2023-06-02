@@ -1,0 +1,56 @@
+.dmp-main-container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2rem;
+    background-color: #e6c79c;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+}
+.dmp-haeding{
+
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dmp-haeding button{
+    background-color: red;
+    width:7rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+    cursor: pointer;
+}
+.dmp-funtinlity-container{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+
+}
+.dmp-donation-requests-conatiner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dmp-donation-requests-conatiner button{
+    background-color: darkblue;
+    width:15rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  darkblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+    cursor: pointer;
+}

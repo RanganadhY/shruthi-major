@@ -26,14 +26,15 @@ const getTxHistory = async(req,res)=>{
 
 const addTx = async(req,res)=>{
     try{
-        const {userType,userName,txHash,gasFee,txAmount,dateOfTx} = req.body;
+        const {requestNumber,userType,userName,txHash,gasFee,txAmount,dateOfTx} = req.body;
         const query = {"userName":userName};
         const update = {
             $push:{"txsHistory":{
                 txHash,
                 gasFee,
                 txAmount,
-                dateOfTx
+                dateOfTx,
+                requestNumber
             }
         }}
         if(userType ==="001"){

@@ -18,23 +18,13 @@ function Login() {
     const handleLogin = async(e)=>{
         e.preventDefault();
         try{
-            if(loginType==="001"){
-                await axios.post("/auth/admin-login",{
-                    userName,
-                    password,
-                }).then((response)=>{
-                    navigate("/admin-home",{state:response.data})
-                }).catch((error)=>{
-                    throw(error)
-                })
-            }
-            else if(loginType==="002"){
+            if(loginType==="002"){
                 await axios.post("/auth/donor-login",{
                     userName,
                     password
                 }).then((response)=>{
                     console.log(response)
-                    navigate("/donor-home",{state:response.data})
+                    navigate(`/donor-home/${userName}`,{state:response.data})
                 })
                 .catch((error)=>{
                     throw(error)
@@ -46,7 +36,7 @@ function Login() {
                     password
                 }).then((response)=>{
                     console.log(response)
-                    navigate("/recepient-home",{state:response.data})
+                    navigate(`/recepient-home/${userName}`,{state:response.data})
                 })
                 .catch((error)=>{
                     throw(error)
@@ -77,16 +67,6 @@ function Login() {
                     <div><h2>Login Here!</h2></div>
                     <div>
                         <div className="opt-login">
-                            <div className='opt-login-opt'>
-                                <label htmlFor="">Admin</label>
-                                <input 
-                                    type="radio"
-                                    name='loginType'
-                                    value="001"
-                                    checked={loginType==="001"}
-                                    onChange={(e)=>setloginType(e.target.value)}
-                                    />
-                            </div>
                             <div className='opt-login-opt'>
                                 <label htmlFor="">Donor</label>
                                 <input 

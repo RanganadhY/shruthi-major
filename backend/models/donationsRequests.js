@@ -1,0 +1,72 @@
+const mongoose = require("mongoose")
+const recivedTxSchema = new mongoose.Schema({
+    recivedMetamaskAddr:{
+        type:String,
+    },
+    recivedAmount:{
+        type:Number
+    },
+    userName:{
+        type:String
+    }
+},{timestamps:true})
+const donationRequestSchema = new mongoose.Schema({
+    requestNumber:{
+        type:Number
+    },
+    recepientMetamaskAddress:{
+        type:String
+    },
+    requestedAmount:{
+        type:String
+    },
+    requestReason:{
+        type:String
+    },
+    requestReasonIpfsHash:{
+        type:String
+    },
+    requestedDate:{
+        type:Date
+    },
+    requestStatus:{
+        type:String,
+    },
+    recepientUserName:{
+        type:String
+    },
+    voitingEligible:{
+        type:Boolean,
+    },
+    votingResult:{
+        type:Boolean,
+        default:false
+    },
+    totalVoters:{
+        type:Number
+    },
+    yesVoters:{
+        type:Number
+    },
+    noVoters:{
+        type:Number
+    },
+    votesCastedBy:{
+        type:Array
+    },
+    approvedVoters:{
+        type:Array
+    },
+    intialMinAmount:{
+        type:Number,
+    },
+    afterMinAmount:{
+        type:Number
+    },
+    donatedDonors:{
+        type:Array
+    },
+    recivedTxDetails:[recivedTxSchema]
+},{timestamps:true})
+
+module.exports=mongoose.model("donationRequestSchema",donationRequestSchema);

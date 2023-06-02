@@ -1,12 +1,13 @@
 import React, { useEffect,useState } from 'react'
-import { useLocation,useParams } from 'react-router-dom';
+import { useNavigate,useLocation,useParams } from 'react-router-dom';
 import axios from "../../axios/axios"
 import "../../css/donationhistory.css"
 
 function VeiwTx() {
     const [saveRes, setsaveRes] = useState();
     const {userName} = useParams();
-
+    const {state} = useLocation();
+    const navigate = useNavigate()
     const handleShowDonations = async()=>{
         
         await axios.get(`/api/tx/get-txn-history/002/${userName}`)
@@ -14,6 +15,10 @@ function VeiwTx() {
             setsaveRes(res.data.txHistory)
             console.log(res.data)
         })
+    }
+
+    const handleBack = async()=>{
+        navigate(`/donor-home/${userName}`,{state:state})
     }
     return (
         <div className='donation-history'>
@@ -29,6 +34,7 @@ function VeiwTx() {
                     <thead>
                         <tr className='table-header'>
                             <th>Date of Tx</th>
+                            <td>Request Number</td>
                             <th>Amount</th>
                             <th>Gas Fee</th>
                             <th>Tx Id</th>
@@ -39,6 +45,7 @@ function VeiwTx() {
                         return (
                             <tr>
                                 <td>{data.dateOfTx.toString()}</td>
+                                <td>{data.requestNumber}</td>
                                 <td>{data.txAmount}</td>
                                 <td>{data.gasFee}</td>
                             <td>{data.txHash}</td>
@@ -51,7 +58,9 @@ function VeiwTx() {
                 
             </div>
             }
-
+            <div className='vp-go-back-btn'>
+                <button  onClick={handleBack}>Go Back</button>
+            </div>
         </div>
     )
 }

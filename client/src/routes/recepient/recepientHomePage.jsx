@@ -6,13 +6,14 @@ import { useParams } from 'react-router-dom'
 function RecepientHomePage() {
     const navigate = useNavigate()
     const {state} = useLocation();
+    const {userName} = useParams();
     const handleAskDonation = async()=>{
-        navigate(`/${state.userDetails.userName}/request-donation/`)
+        navigate(`/${userName}/request-donation/`)
     }
     const handleViewRequets = async()=>{
-        navigate(`/recepient/view-requests/${state.userDetails.userName}`)
+        navigate(`/recepient/view-requests/${userName}`)
     }
-    const {userName} = useParams();
+
 
     return (
         <div className='recepientHomePage-style'>

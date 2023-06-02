@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-
+require("./jobs/votingDisable")
 const authRoutes = require("./routes/authRoutes");
 const txRoutes = require("./routes/txRoutes");
 const recepientRoutes = require("./routes/recepientRoutes");
 const adminRoutes = require("./routes/adminRoutes")
+const donorRoutes = require("./routes/donorRoutes")
+const votingRoutes = require("./routes/votingRoutes")
 // const idVerificationRoutes = require("./routes/idverification")
 
 const app = express();
@@ -37,6 +39,8 @@ app.use("/auth",authRoutes);
 app.use("/api/tx/",txRoutes);
 app.use("/api/recepient/",recepientRoutes);
 app.use("/api/admin/",adminRoutes)
+app.use("/api/donor/",donorRoutes)
+app.use("/api/voting/",votingRoutes)
 
 const mongoose = require("mongoose");
 

@@ -1,0 +1,25 @@
+.vdr-main-conatiner{
+    height: 100vh;
+    background-color: #e6c79c;
+    background-color: #809edf;
+    background-image: linear-gradient(147deg, #c3cbdc 12%, #edf1f4 74%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.vdr-main-conatiner button{
+    background-color: darkblue;
+    width:7rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  darkblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    /* gap: 3rem; */
+}
+
+.donation-status{
+    font-size:1.3rem;
+}

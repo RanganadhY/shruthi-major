@@ -13,6 +13,14 @@ const txSchema = new mongoose.Schema({
         type:Number
     }
 })
+const recivedTxSchema = new mongoose.Schema({
+    recivedMetamaskAddr:{
+        type:String,
+    },
+    recivedAmount:{
+        type:Number
+    }
+},{timestamps:true})
 const donationRequestsDetails = new mongoose.Schema({
     requestNumber:{
         type:Number
@@ -28,7 +36,11 @@ const donationRequestsDetails = new mongoose.Schema({
     },
     requestStatus:{
         type:String
-    }
+    },
+    requestReasonIpfsHash:{
+        type:String
+    },
+    recivedTxDetails:[recivedTxSchema]
 })
 const recepientSchema = new mongoose.Schema({
     userName:{

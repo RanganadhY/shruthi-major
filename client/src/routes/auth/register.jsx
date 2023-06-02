@@ -54,22 +54,7 @@ function Register() {
             // console.log(accounts[0])
             // const contract = await new window.web3.eth.Contract(JSON.parse(CONTRACT_ABI),CONTRACT_ADDRESS)
             // console.log(contract)
-            if(registerType ==="001"){
-                await axios.post("/auth/admin-register",
-                    {
-                        userName,
-                        password,
-                        metamaskAddress,
-                        panNo
-                    }
-                ).then((response)=>{
-                    navigate("/admin-home",{state:response.data})
-                })
-                .catch((error)=>{
-                    throw(error);
-                })
-            }
-            else if(registerType ==="002"){
+            if(registerType ==="002"){
                 await axios.post("/auth/donor-register",
                     {
                         userName,
@@ -78,7 +63,7 @@ function Register() {
                         panNo
                     }
                 ).then((response)=>{
-                    navigate("/donor-home",{state:response.data})
+                    navigate(`/donor-home/${userName}`,{state:response.data})
                 })
                 .catch((error)=>{
                     throw(error);
@@ -136,16 +121,6 @@ function Register() {
                     <h2>Register Here!</h2>
                 </div>
                         <div className="opt-login">
-                            <div className='opt-login-opt'>
-                                <label htmlFor="">Admin</label>
-                                <input 
-                                    type="radio"
-                                    name='loginType'
-                                    value="001"
-                                    checked={registerType==="001"}
-                                    onChange={(e)=>setregisterType(e.target.value)}
-                                    />
-                            </div>
                             <div className='opt-login-opt'>
                                 <label htmlFor="">Donor</label>
                                 <input 

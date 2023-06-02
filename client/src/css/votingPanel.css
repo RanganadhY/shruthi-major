@@ -1,0 +1,70 @@
+.vp-main-conntainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #e6c79c;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+}
+.vp-voting-buttons-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.vp-yes-button{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.vp-yes-button :nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkblue;
+    width:15rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  darkblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+    cursor: pointer;
+}
+.vp-yes-button :nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width:15rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+    cursor: pointer;
+}
+.vp-go-back-btn{
+    padding: 2rem;
+}
+.vp-go-back-btn button{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: darkblue;
+    width:15rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color:  darkblue;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 3rem;
+    cursor: pointer;
+}
