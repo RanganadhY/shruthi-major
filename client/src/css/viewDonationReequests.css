@@ -1,5 +1,5 @@
 .vdr-main-conatiner{
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e6c79c;
     background-color: #809edf;
     background-image: linear-gradient(147deg, #c3cbdc 12%, #edf1f4 74%);

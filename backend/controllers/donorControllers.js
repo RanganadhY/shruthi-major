@@ -38,7 +38,7 @@ const saveDonationDetails = async(req,res)=>{
             $push:{
                 recivedTxDetails:{
                         recivedAmount,
-                        recivedMetamaskAddr,
+                        recivedMetamaskAddr, 
                         userName
                     },
                     donatedDonors:userName

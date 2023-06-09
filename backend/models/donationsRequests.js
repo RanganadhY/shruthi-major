@@ -46,10 +46,12 @@ const donationRequestSchema = new mongoose.Schema({
         type:Number
     },
     yesVoters:{
-        type:Number
+        type:Number,
+        default:0
     },
     noVoters:{
-        type:Number
+        type:Number,
+        default:0
     },
     votesCastedBy:{
         type:Array

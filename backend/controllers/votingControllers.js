@@ -25,6 +25,7 @@ const castYes = async(req,res)=>{
 
 
             if((requestDetails.yesVoters+1) >= (0.6*requestDetails.totalVoters)){
+                console.log("1st excuted")
                 let afterMinAmount = (requestDetails.requestedAmount)/(requestDetails.yesVoters+1);
                 updateQuery = {
                     $inc:{yesVoters:1},
@@ -33,10 +34,11 @@ const castYes = async(req,res)=>{
                         votesCastedBy:userName
                     },
                     afterMinAmount,
-                    "votingResult":true
+                    votingResult:true
                 }
             }
             else if((requestDetails.yesVoters+1) < (0.6*requestDetails.totalVoters)){
+                
                 let afterMinAmount = 0;
                 updateQuery = {
                     $inc:{yesVoters:1},
@@ -45,11 +47,9 @@ const castYes = async(req,res)=>{
                         votesCastedBy:userName
                     },
                     afterMinAmount,
-                    "votingResult":false
+                    votingResult:false
                 }
             }
-            
-            
         }
         else{
             updateQuery = {
@@ -61,7 +61,9 @@ const castYes = async(req,res)=>{
             }
 
         }
+        console.log(updateQuery)
         const response = await donationRequestModel.findOneAndUpdate({requestNumber},updateQuery)
+        console.log(response)
         return res.status(200).json({"message":"Sucessfull"})
     }catch(e){
         console.log(e)
@@ -89,7 +91,7 @@ const castNo = async(req,res)=>{
                         votesCastedBy:userName
                     },
                     afterMinAmount,
-                    "votingResult":true
+                    votingResult:true
                 }
             }
 
@@ -103,7 +105,7 @@ const castNo = async(req,res)=>{
                         votesCastedBy:userName
                     },
                     afterMinAmount,
-                    "votingResult":false
+                    votingResult:false
                 }
             }
         }
@@ -117,6 +119,7 @@ const castNo = async(req,res)=>{
             }
         }
         const response = await donationRequestModel.findOneAndUpdate({requestNumber},updateQuery)
+        console.log(response)
         return res.status(200).json({"message":"Sucessfull"})
     }catch(e){
         console.log(e)

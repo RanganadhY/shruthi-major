@@ -65,9 +65,8 @@ function ViewDonationRequests() {
                                 <td><button onClick={()=>handleFileView(data.requestReasonIpfsHash)} >View Proof</button></td>
                                 {data.votesCastedBy.includes(userName)?<td>Voting Done</td>:<td><button onClick={()=>handleVoting(data.requestNumber)}>Go for Voting</button></td>}
                                 {
-                                    ((data.votingResult && data.approvedVoters.includes(userName))&& !(data.donatedDonors.includes(userName)))?<button onClick={()=>handlePendingDonation(data.requestNumber)} >Donation Pending</button>:
+                                    (((data.yesVoters>data.noVoters) && data.approvedVoters.includes(userName))&& !(data.donatedDonors.includes(userName)))?<button onClick={()=>handlePendingDonation(data.requestNumber)} >Donation Pending</button>:
                                     ((data.donatedDonors.includes(userName)))?<p className='donation-status'>Donation Completed</p>:
-                                    (data.votingResult&& !(data.approvedVoters.includes(userName)))?<p className='donation-status' >You casted NO</p>:
                                     (data.votesCastedBy.length<data.totalVoters)?<p className='donation-status' >Voting In progress</p>
                                     :<p className='donation-status' >Request declined</p>
                                 }

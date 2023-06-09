@@ -29,3 +29,10 @@
     align-items: center;
     gap: 3rem;
 }
+
+.userName{
+    color: rgb(39, 58, 134);
+    font-size:2rem;
+    font-weight: 500;
+    padding-top: 1rem;
+}
